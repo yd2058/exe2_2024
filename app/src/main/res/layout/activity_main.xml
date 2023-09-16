@@ -47,7 +47,7 @@
             android:layout_weight="1"
             android:ems="10"
             android:hint="first num"
-            android:inputType="numberDecimal" />
+            android:inputType="numberDecimal|numberSigned" />
 
         <EditText
             android:id="@+id/etm"
@@ -56,7 +56,7 @@
             android:layout_weight="1"
             android:ems="10"
             android:hint="modifier"
-            android:inputType="numberDecimal" />
+            android:inputType="numberDecimal|numberSigned" />
 
         <Button
             android:id="@+id/btn"

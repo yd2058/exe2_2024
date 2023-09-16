@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     EditText etf, etm;
@@ -29,10 +30,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void next(View view) {
-        Intent si = new Intent(this, Results.class);
-        si.putExtra("type", ty);
-        si.putExtra("first", parseDouble(etf.getText().toString()));
-        si.putExtra("mod", parseDouble(etm.getText().toString()));
-        startActivity(si);
+        if(!etf.getText().toString().equals("")&&!etm.getText().toString().equals("")) {
+            Intent si = new Intent(this, Results.class);
+            si.putExtra("type", ty);
+            si.putExtra("first", parseDouble(etf.getText().toString()));
+            si.putExtra("mod", parseDouble(etm.getText().toString()));
+            startActivity(si);
+        }
+        else Toast.makeText(this, "you have not entered all parameters", Toast.LENGTH_SHORT).show();
     }
 }
